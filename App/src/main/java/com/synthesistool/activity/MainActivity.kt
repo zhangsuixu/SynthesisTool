@@ -3,6 +3,7 @@ package com.synthesistool.activity
 import android.os.Bundle
 import android.support.v4.view.ViewPager
 import android.view.View
+import com.common.tools.LogUtil
 import com.service.bean.MainPageParam
 import com.service.bean.MainPageParam.MainBottomParam
 import com.synthesistool.R
@@ -18,6 +19,7 @@ import com.ui.base.BaseMainPageFragment
 import kotlinx.android.synthetic.main.act_main.*
 import javax.inject.Inject
 
+@Suppress("SpellCheckingInspection")
 class MainActivity : BaseActivity(), MainDraggerView {
 
     @Inject
@@ -25,6 +27,8 @@ class MainActivity : BaseActivity(), MainDraggerView {
     var mMainDraggerPreseneter: MainDraggerPreseneter? = null
 
     private var mMainBottomList: ArrayList<MainBottomParam> = ArrayList()
+
+    private var mainFragments: ArrayList<BaseMainPageFragment> = ArrayList()
 
     private var mMainActViewPageAdapter: MainActViewPageAdapter? = null
 
@@ -56,7 +60,6 @@ class MainActivity : BaseActivity(), MainDraggerView {
         initData()
     }
 
-    private var mainFragments: ArrayList<BaseMainPageFragment> = ArrayList()
     override fun refreshView(response: MainPageParam) {
         showContent()
 
@@ -82,7 +85,7 @@ class MainActivity : BaseActivity(), MainDraggerView {
 
             if (mainBottoms[i].isSelected) {
                 vp_content?.currentItem = i
-                mainFragments[i].onFragmentSeleted()
+                onFragmentPageSeleted(i)
             }
 
             mMainBottomList.add(index)
@@ -92,10 +95,15 @@ class MainActivity : BaseActivity(), MainDraggerView {
         bnv_bottom_navigation.setOnChooseListener(object : OnChooseListener {
             override fun onChoose(position: Int) {
                 vp_content?.currentItem = position
-                mainFragments[position].onFragmentSeleted()
+                onFragmentPageSeleted(position)
             }
         })
+    }
 
+    private fun onFragmentPageSeleted(position : Int) {
+        LogUtil.i("onFragmentPageSeleted$position")
+
+        mainFragments[position].onFragmentSeleted()
     }
 
     private fun initMainViewPage(mainMainPageFragments: ArrayList<BaseMainPageFragment>) {
@@ -103,25 +111,18 @@ class MainActivity : BaseActivity(), MainDraggerView {
             mMainActViewPageAdapter = MainActViewPageAdapter(supportFragmentManager, mainMainPageFragments)
 
             vp_content?.adapter = mMainActViewPageAdapter
-            vp_content?.offscreenPageLimit = mainMainPageFragments.size - 1
+            vp_content?.offscreenPageLimit = mainMainPageFragments.size - 1 //启动就初始化所需的Fragment,具体Fragment的数据初始化可以在onFragmentSeleted回调时进行
             vp_content?.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
-                override fun onPageScrollStateChanged(p0: Int) {
-
-                }
-
-                override fun onPageScrolled(p0: Int, p1: Float, p2: Int) {
-
-                }
-
+                override fun onPageScrollStateChanged(p0: Int) {}
+                override fun onPageScrolled(p0: Int, p1: Float, p2: Int) {}
                 override fun onPageSelected(p0: Int) {
                     mMainBottomList.indices.forEach { i ->
                         if (i == p0) {
                             mMainBottomList[i].isSelected = true
-                            mainFragments[i].onFragmentSeleted()
+                            onFragmentPageSeleted(i)
                         } else {
                             mMainBottomList[i].isSelected = false
                         }
-
                     }
 
                     bnv_bottom_navigation.refreshMaainBottom(mMainBottomList)

@@ -5,7 +5,7 @@ package com.ui.base
  */
 abstract class BaseMainPageFragment : BaseFragment(){
 
-    /** 当前页面被选中时触发 */
+    /** 当前页面被选中时触发,进行实际的初始化 */
     abstract fun onFragmentSeleted()
 
 }

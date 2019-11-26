@@ -7,10 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.common.tools.EventBusUtils
+import com.common.tools.LogUtil
 
 abstract class BaseFragment : Fragment(){
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        LogUtil.i(this.javaClass.name)
+
         val contentView : View = initView() ?: return TextView(context)
 
         initData()

@@ -8,7 +8,7 @@ import com.ui.base.BaseMainPageFragment
 class EmptyMainPageFragment : BaseMainPageFragment() {
 
     override fun onFragmentSeleted() {
-        ToastUtils.showCenterSucceedToast("EmptyMainPageFragment 被选中了")
+
     }
 
     override fun initView(): View? {
