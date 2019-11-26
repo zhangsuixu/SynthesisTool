@@ -1,5 +1,6 @@
 package com.common.tools;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
@@ -171,8 +172,12 @@ public class UIUtils {
             hasNavigationBar = rs.getBoolean(id);
         }
         try {
+            @SuppressLint("PrivateApi")
             Class systemPropertiesClass = Class.forName("android.os.SystemProperties");
+
+            //noinspection unchecked
             Method m = systemPropertiesClass.getMethod("get", String.class);
+
             String navBarOverride = (String) m.invoke(systemPropertiesClass, "qemu.hw.mainkeys");
             if ("1".equals(navBarOverride)) {
                 hasNavigationBar = false;
@@ -180,7 +185,7 @@ public class UIUtils {
                 hasNavigationBar = true;
             }
         } catch (Exception e) {
-            //TODO
+            LogUtil.e(e, "checkDeviceHasNavigationBar exception");
         }
 
         return hasNavigationBar;

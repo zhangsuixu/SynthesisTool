@@ -14,7 +14,7 @@ import com.synthesistool.presenter.MainDraggerPreseneter
 import com.synthesistool.view.MainDraggerView
 import com.ui.adapter.MainBottomAdapter.OnChooseListener
 import com.ui.base.BaseActivity
-import com.ui.base.BaseFragment
+import com.ui.base.BaseMainPageFragment
 import kotlinx.android.synthetic.main.act_main.*
 import javax.inject.Inject
 
@@ -56,6 +56,7 @@ class MainActivity : BaseActivity(), MainDraggerView {
         initData()
     }
 
+    private var mainFragments: ArrayList<BaseMainPageFragment> = ArrayList()
     override fun refreshView(response: MainPageParam) {
         showContent()
 
@@ -63,7 +64,7 @@ class MainActivity : BaseActivity(), MainDraggerView {
 
         val mainFragmentParams = response.mainFragmentParams
 
-        val mainFragments = java.util.ArrayList<BaseFragment>()
+        mainFragments.clear()
 
         for (position in mainFragmentParams.indices) {
             mainFragments.add(FragmentFactory.getFragment(mainFragmentParams[position].fragmentsId))
@@ -79,29 +80,31 @@ class MainActivity : BaseActivity(), MainDraggerView {
                     findMainBottomDefaultIconId(mainFragmentParams[i].fragmentsId),
                     mainBottoms[i].isSelected)
 
-            if(mainBottoms[i].isSelected){
+            if (mainBottoms[i].isSelected) {
                 vp_content?.currentItem = i
+                mainFragments[i].onFragmentSeleted()
             }
 
             mMainBottomList.add(index)
         }
 
         bnv_bottom_navigation.setData(mMainBottomList)
-        bnv_bottom_navigation.setOnChooseListener(object : OnChooseListener{
+        bnv_bottom_navigation.setOnChooseListener(object : OnChooseListener {
             override fun onChoose(position: Int) {
                 vp_content?.currentItem = position
+                mainFragments[position].onFragmentSeleted()
             }
         })
 
     }
 
-    private fun initMainViewPage(mainFragments : ArrayList<BaseFragment>) {
-        if(null == mMainActViewPageAdapter){
-            mMainActViewPageAdapter = MainActViewPageAdapter(supportFragmentManager, mainFragments)
+    private fun initMainViewPage(mainMainPageFragments: ArrayList<BaseMainPageFragment>) {
+        if (null == mMainActViewPageAdapter) {
+            mMainActViewPageAdapter = MainActViewPageAdapter(supportFragmentManager, mainMainPageFragments)
 
             vp_content?.adapter = mMainActViewPageAdapter
-            vp_content?.offscreenPageLimit = mainFragments.size - 1
-            vp_content?.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
+            vp_content?.offscreenPageLimit = mainMainPageFragments.size - 1
+            vp_content?.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
                 override fun onPageScrollStateChanged(p0: Int) {
 
                 }
@@ -112,7 +115,13 @@ class MainActivity : BaseActivity(), MainDraggerView {
 
                 override fun onPageSelected(p0: Int) {
                     mMainBottomList.indices.forEach { i ->
-                        mMainBottomList[i].isSelected = i == p0
+                        if (i == p0) {
+                            mMainBottomList[i].isSelected = true
+                            mainFragments[i].onFragmentSeleted()
+                        } else {
+                            mMainBottomList[i].isSelected = false
+                        }
+
                     }
 
                     bnv_bottom_navigation.refreshMaainBottom(mMainBottomList)

@@ -1,11 +1,11 @@
 package com.synthesistool.fragment
 
 import android.annotation.SuppressLint
-import com.ui.base.BaseFragment
+import com.ui.base.BaseMainPageFragment
 import java.util.*
 
 /**
- * 通过工厂获取首页所需Fragment
+ * 通过工厂获取首页所需指定的Fragment,若没所需Fragment,返回EmptyMainPageFragment();
  */
 object FragmentFactory {
 
@@ -14,9 +14,9 @@ object FragmentFactory {
     private const val FRAGMENT_REMOTE_LOG = 3
 
     @SuppressLint("UseSparseArrays")
-    val mFragments = HashMap<Int, BaseFragment>()
+    val mFragments = HashMap<Int, BaseMainPageFragment>()
 
-    val fragments: Map<Int, BaseFragment>
+    val fragments: Map<Int, BaseMainPageFragment>
         get() = mFragments
 
     val count: Int
@@ -29,8 +29,8 @@ object FragmentFactory {
     /**
      * 通过反射获取首页Fragment,不同Fragment所属module不同,不依赖时显示空布局
      */
-    fun getFragment(position: Int): BaseFragment {
-        var fragment: BaseFragment
+    fun getFragment(position: Int): BaseMainPageFragment {
+        var mainPageFragment: BaseMainPageFragment
 
         if (mFragments.containsKey(position)) {
             return mFragments[position]!!
@@ -38,28 +38,28 @@ object FragmentFactory {
 
         when (position) {
             FRAGMENT_HOME -> try {
-                fragment = Class.forName("com.home.fragment.HomeFragment").newInstance() as BaseFragment
+                mainPageFragment = Class.forName("com.home.fragment.HomeMainPageFragment").newInstance() as BaseMainPageFragment
             } catch (e: Exception) {
-                fragment = EmptyFragment()
+                mainPageFragment = EmptyMainPageFragment()
             }
 
             FRAGMENT_LOCAL_LOG -> try {
-                fragment = Class.forName("com.locallog.fragment.LocalLogFragment").newInstance() as BaseFragment
+                mainPageFragment = Class.forName("com.locallog.fragment.LocalLogMainPageFragment").newInstance() as BaseMainPageFragment
             } catch (e: Exception) {
-                fragment = EmptyFragment()
+                mainPageFragment = EmptyMainPageFragment()
             }
 
             FRAGMENT_REMOTE_LOG -> try {
-                fragment = Class.forName("com.remotelog.fragment.RemoteLogFragment").newInstance() as BaseFragment
+                mainPageFragment = Class.forName("com.remotelog.fragment.RemoteLogMainPageFragment").newInstance() as BaseMainPageFragment
             } catch (e: Exception) {
-                fragment = EmptyFragment()
+                mainPageFragment = EmptyMainPageFragment()
             }
 
-            else -> fragment = EmptyFragment()
+            else -> mainPageFragment = EmptyMainPageFragment()
         }
 
-        mFragments[position] = fragment
+        mFragments[position] = mainPageFragment
 
-        return fragment
+        return mainPageFragment
     }
 }
