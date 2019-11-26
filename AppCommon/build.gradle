@@ -1,0 +1,55 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+//    sourceSets {// 案例 :目录指向配置
+//        main {
+//            java.srcDirs = ['src']//指定source目录
+//            res.srcDirs = ['res']//指定资源目录
+//            assets.srcDirs = ['assets']//指定assets目录
+//            jniLibs.srcDirs = ['libs']//指定lib库目录
+//        }
+//    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    /**********************   事件总线 start  ************************/
+    api rootProject.ext.dependencies.eventBus
+    /**********************    事件总线 end  ************************/
+    /**/
+    /**********************    日志框架 start  ****************************/
+    api rootProject.ext.dependencies.logger
+    /**********************    日志框架 end  ****************************/
+    /**/
+    /**********************    json数据解析 start  ************************/
+    api rootProject.ext.dependencies.gson
+    /**********************    json数据解析 end  ************************/
+    /**/
+    /**********************    允许反射系统隐藏api start  ****************************/
+    // Android P禁用hide api，这个库可以支持hide api的反射访问
+    // api rootProject.ext.dependencies.freeReflection
+    /**********************    允许反射系统隐藏api end  ****************************/
+    /**/
+    /**********************    测试库 start  ************************/
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    /**********************    测试库 end  ************************/
+}

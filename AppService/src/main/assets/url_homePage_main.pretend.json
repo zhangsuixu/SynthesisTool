@@ -1,0 +1,38 @@
+{
+  "code": "200",
+  "message": "成功",
+  "result": "success",
+  "data": {
+    "mainBottoms": [
+      {
+        "isSelected": false,
+        "name": "数据一",
+        "selectedId": 2131165318,
+        "unselectedId": 2131165317
+      },
+      {
+        "isSelected": false,
+        "name": "数据二",
+        "selectedId": 2131165318,
+        "unselectedId": 2131165317
+      },
+      {
+        "isSelected": true,
+        "name": "数据三",
+        "selectedId": 2131165318,
+        "unselectedId": 2131165317
+      }
+    ],
+    "mainFragmentParams": [
+      {
+        "fragmentsId": 3
+      },
+      {
+        "fragmentsId": 1
+      },
+      {
+        "fragmentsId": 2
+      }
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+    }
+
+    kapt {
+        arguments {
+            arg("AROUTER_MODULE_NAME", project.getName())
+            arg("AROUTER_GENERATE_DOC", "enable")
+        }
+    }
+
+    androidExtensions {//kotlin-android-extensions plugin need
+        experimental = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    /**********************   组件 start  ************************/
+    api project(path: ':AppService')
+    /**********************    组件 end  ************************/
+    /**/
+    /**********************    android support start  **********************/
+    api rootProject.ext.dependencies.appcompatV7
+    api rootProject.ext.dependencies.constraintLayout
+    api rootProject.ext.dependencies.design
+    api rootProject.ext.dependencies.recyclerview
+    api rootProject.ext.dependencies.supportV4
+    api rootProject.ext.dependencies.multidex
+    api rootProject.ext.dependencies.cardview
+    api rootProject.ext.dependencies.navigationFragment
+    api rootProject.ext.dependencies.navigationUi
+    /**********************    android support end  **********************/
+    /**/
+    /**********************   arouter框架 start  ************************/
+    api rootProject.ext.dependencies.arouterApi
+    kapt rootProject.ext.dependencies.arouterCompiler
+    /**********************    arouter框架 end  ************************/
+    /**/
+    /**********************    图片加载框架 start  ************************/
+    api rootProject.ext.dependencies.glide
+    /**********************    图片加载框架 end  ************************/
+    /**/
+    /**********************    微信二维码 start  ************************/
+    api rootProject.ext.dependencies.zxing
+    /**********************    微信二维码 end  ************************/
+    /**/
+    /**********************    万能RecyclerView适配器 start  ************************/
+    api rootProject.ext.dependencies.smartRefreshLayout
+    api rootProject.ext.dependencies.smartRefreshHeader//没有使用特殊Header，可以不加这行
+    /**********************    万能RecyclerView适配器 end  ************************/
+    /**/
+    /**********************    Popwindow框架 start  ************************/
+    api rootProject.ext.dependencies.xpopup
+    /**********************    Popwindow框架 end  ************************/
+    /**/
+    /**********************    materialDialog框架 start  ************************/
+    api rootProject.ext.dependencies.materialDialog
+    /**********************    materialDialog框架 end  ************************/
+    /**/
+    /**********************    WebView框架 start  ************************/
+    api rootProject.ext.dependencies.agentweb // (必选)
+    api rootProject.ext.dependencies.agentwebFileChooser// (可选)
+    api rootProject.ext.dependencies.agentwebDownload // (可选)
+    api rootProject.ext.dependencies.agentwebDownloader// (可选)
+    /**********************    WebView框架 end  ************************/
+
+}

@@ -1,0 +1,32 @@
+<resources>
+    <string name="error_message_unknown_reason">未知原因</string>
+
+    <string name="error_message_400_tips">客户端请求的语法错误，服务器无法理解</string>
+    <string name="error_message_401_tips">请求需身份认证</string>
+    <string name="error_message_403_tips">服务器拒绝执行此请求</string>
+    <string name="error_message_404_tips">访问网址不存在</string>
+    <string name="error_message_405_tips">请求中的方法被禁止</string>
+    <string name="error_message_406_tips">服务器无法根据客户端请求的内容特性完成请求</string>
+    <string name="error_message_407_tips">请求要求代理的身份认证</string>
+    <string name="error_message_408_tips">服务器等待客户端发送的请求时间过长</string>
+    <string name="error_message_409_tips">服务端处理客户端PUT请求发生冲突</string>
+    <string name="error_message_410_tips">客户端请求的资源以及不存在</string>
+    <string name="error_message_411_tips">服务器无法处理客户端发送的不带Content-Length的请求信息</string>
+    <string name="error_message_412_tips">客户端请求信息的先决条件错误</string>
+    <string name="error_message_413_tips">由于请求的实体过大，服务器无法处理而拒绝请求</string>
+    <string name="error_message_414_tips">请求网址过长，服务器无法处理</string>
+    <string name="error_message_415_tips">服务器无法处理请求附带的媒体格式</string>
+    <string name="error_message_416_tips">客户端请求的范围无效</string>
+    <string name="error_message_417_tips">服务器无法满足Expect的请求头信息</string>
+
+    <string name="error_message_500_tips">服务器内部错误</string>
+    <string name="error_message_501_tips">服务器不支持请求的功能</string>
+    <string name="error_message_502_tips">网关错误</string>
+    <string name="error_message_503_tips">服务器暂时无法处理客户端请求</string>
+    <string name="error_message_504_tips">网关超时</string>
+    <string name="error_message_505_tips">服务器不支持请求的HTTP协议的版本</string>
+
+    <string name="error_message_60001_tips">请检查设备网络是否正常</string>
+    <string name="error_message_60002_tips">9.0设备中当前软件未声明允许明文传输</string>
+    <string name="error_message_60003_tips">请求超时</string>
+</resources>

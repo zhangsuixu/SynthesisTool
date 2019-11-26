@@ -1,0 +1,65 @@
+[
+  {
+    "appName": "即有生活",
+    "fileDirs": "apps",
+    "fileName": "mall",
+    "packageName": "com.giveu.shoppingmall",
+    "filePath": "http://gitlab.dafycredit.com/524202/appDownloader/raw/master/"
+  },
+  {
+    "appName": "即有宝",
+    "fileDirs": "apps",
+    "fileName": "3corder",
+    "packageName": "com.giveu.corder",
+    "filePath": "http://gitlab.dafycredit.com/524202/appDownloader/raw/master/"
+  },
+  {
+    "appName": "中移金服",
+    "fileDirs": "apps",
+    "fileName": "cmobile",
+    "packageName": "com.giveu.cmobile",
+    "filePath": "http://gitlab.dafycredit.com/524202/appDownloader/raw/master/"
+  },
+  {
+    "appName": "享购机",
+    "fileDirs": "apps",
+    "fileName": "cunicom",
+    "packageName": "com.giveu.cunicom",
+    "filePath": "http://gitlab.dafycredit.com/524202/appDownloader/raw/master/"
+  },
+  {
+    "appName": "享有宝",
+    "fileDirs": "apps",
+    "fileName": "cunicomsa",
+    "packageName": "com.giveu.cunicomsa",
+    "filePath": "http://gitlab.dafycredit.com/524202/appDownloader/raw/master/"
+  },
+  {
+    "appName": "购机宝",
+    "fileDirs": "apps",
+    "fileName": "smobile",
+    "packageName": "com.giveu.smobile",
+    "filePath": "http://gitlab.dafycredit.com/524202/appDownloader/raw/master/"
+  },
+  {
+    "appName": "即速用",
+    "fileDirs": "apps",
+    "fileName": "market",
+    "packageName": "om.giveu.market",
+    "filePath": "http://gitlab.dafycredit.com/524202/appDownloader/raw/master/"
+  },
+  {
+    "appName": "工资卡",
+    "fileDirs": "apps",
+    "fileName": "vcard",
+    "packageName": "com.giveu.vcard",
+    "filePath": "http://gitlab.dafycredit.com/524202/appDownloader/raw/master/"
+  },
+  {
+    "appName": "管理工具",
+    "fileDirs": "apps",
+    "fileName": "mgmt",
+    "packageName": "com.giveu.mgmt",
+    "filePath": "http://gitlab.dafycredit.com/524202/appDownloader/raw/master/"
+  }
+]

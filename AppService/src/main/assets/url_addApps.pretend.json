@@ -1,0 +1,52 @@
+[
+  {
+    "fileTime": "2019年08月10日   19:22:32",
+    "fileName": "mall0",
+    "fileEnvrionment": "online",
+    "fileVersion": "2.1.19.1",
+    "fileDes": "咯KKK",
+    "packageName": "packageName"
+  },
+  {
+    "fileTime": "2019年08月11日   19:22:32",
+    "fileName": "mall0",
+    "fileEnvrionment": "test",
+    "fileVersion": "2.1.19.2",
+    "fileDes": "咯KKK"
+  },
+  {
+    "fileTime": "2019年08月12日   19:22:32",
+    "fileName": "mall0",
+    "fileEnvrionment": "test",
+    "fileVersion": "2.1.19.3",
+    "fileDes": "咯KKK"
+  },
+  {
+    "fileTime": "2019年08月13日   19:22:32",
+    "fileName": "mall1",
+    "fileEnvrionment": "test",
+    "fileVersion": "2.1.19.4",
+    "fileDes": "咯KKK"
+  },
+  {
+    "fileTime": "2019年08月14日   19:22:32",
+    "fileName": "mall1",
+    "fileEnvrionment": "test",
+    "fileVersion": "2.1.19.5",
+    "fileDes": "咯KKK"
+  },
+  {
+    "fileTime": "2019年08月15日   19:22:32",
+    "fileName": "mall1",
+    "fileEnvrionment": "test",
+    "fileVersion": "2.1.19.6",
+    "fileDes": "咯KKK"
+  },
+  {
+    "fileTime": "2019年08月16日   19:22:32",
+    "fileName": "mall0",
+    "fileEnvrionment": "test",
+    "fileVersion": "2.1.19.8",
+    "fileDes": "咯KKK"
+  }
+]

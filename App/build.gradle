@@ -1,0 +1,66 @@
+apply plugin: 'com.android.application'
+apply plugin: 'androidx.navigation.safeargs'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        applicationId "com.synthesistool"
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
+                arg("AROUTER_GENERATE_DOC", "enable")
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    androidExtensions {//kotlin-android-extensions plugin need
+        experimental = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    /**********************    通用UI组件 start  ****************************/
+    api project(path: ':AppUI')
+
+    if (IsNeedLocalLog.toBoolean()){
+        api project(path: ':MLocalLog')
+    }
+    if (IsNeedRemoteLog.toBoolean()){
+        api project(path: ':MRemoteLog')
+    }
+    if (IsNeedHome.toBoolean()){
+        api project(path: ':MHome')
+    }
+    /**********************    通用UI组件 end  ****************************/
+    /**/
+    /**********************   arouter框架 start  ************************/
+    compileOnly rootProject.ext.dependencies.arouterApi
+    kapt rootProject.ext.dependencies.arouterCompiler
+    /**********************    arouter框架 end  ************************/
+    /**/
+    /**********************   dagger2 start  ************************/
+    implementation rootProject.ext.dependencies.daggerAndroid
+    implementation rootProject.ext.dependencies.daggerAndroidSupport
+    kapt rootProject.ext.dependencies.daggerCompiler
+    kapt rootProject.ext.dependencies.daggerAndroidProcessor
+    /**********************   dagger2 end  ************************/
+
+}
