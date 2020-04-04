@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nav_main">
+
+    <fragment
+        android:id="@+id/nav_main">
+        <action
+            android:id="@+id/action_nav_main_to_nav_simple" />
+        <action
+            android:id="@+id/action_nav_main_to_nav_bottom_navigation_view" />
+    </fragment>
+
+</navigation>

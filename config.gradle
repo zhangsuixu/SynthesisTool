@@ -1,0 +1,69 @@
+ext {
+    android = [compileSdkVersion       : 28,
+               minSdkVersion           : 21,
+               targetSdkVersion        : 28,
+               versionCode             : 100001,
+               versionName             : "1.0.1",
+               androidSupportSdkVersion: "28.0.0",
+               dagger2                 : "2.17",
+    ]
+
+    dependencies = [
+            "appcompatV7"           : 'androidx.appcompat:appcompat:1.0.0',
+            "design"                : 'com.google.android.material:material:1.0.0',
+            "recyclerview"          : 'androidx.recyclerview:recyclerview:1.0.0',
+            "supportV4"             : 'androidx.legacy:legacy-support-v4:1.0.0',
+            "cardview"              : 'androidx.cardview:cardview:1.0.0',
+            "supportAnnotations"    : "com.android.support:support-annotations:${android["androidSupportSdkVersion"]}",
+            "multidex"              : 'androidx.multidex:multidex:2.0.0',
+            "constraintLayout"      : "androidx.constraintlayout:constraintlayout:1.1.3",// 1.1.3版本以下会报错 Error inflating class androidx.constraintlayout.widget.ConstraintLayout
+            "androidxCore"          : "androidx.core:core:1.1.0",
+
+            //arouter
+            "arouterApi"            : "com.alibaba:arouter-api:1.5.0",
+            "arouterCompiler"       : "com.alibaba:arouter-compiler:1.2.2",
+
+            //dagger2
+            "daggerAndroid"         : "com.google.dagger:dagger-android:${android["dagger2"]}",
+            "daggerAndroidSupport"  : "com.google.dagger:dagger-android-support:${android["dagger2"]}",
+            "daggerCompiler"        : "com.google.dagger:dagger-compiler:${android["dagger2"]}",
+            "daggerAndroidProcessor": "com.google.dagger:dagger-android-processor:${android["dagger2"]}",
+
+            //navigation
+            "navigationFragment"    : 'androidx.navigation:navigation-fragment:2.0.0-rc02',
+            "navigationUi"          : 'androidx.navigation:navigation-ui:2.0.0-rc02',
+
+            //test 测试库
+            "junit"                 : "junit:junit:4.12",
+            "runner"                : "androidx.test:runner:1.1.0",
+            "espresso"              : "androidx.test.espresso:espresso-core:3.1.0",
+
+//           AppUI  Start
+            "glide"                 : "com.github.bumptech.glide:glide:4.7.1",//图片加载框架
+            "zxing"                 : "cn.bingoogolapple:bga-qrcode-zxing:1.2.1",//二维码生成
+            "smartRefreshLayout"    : "com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-31",//UI刷新框架(引入玩玩而已)
+            "smartRefreshHeader"    : "com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-31",//UI刷新框架(引入玩玩而已)
+            "xpopup"                : "com.lxj:xpopup:1.8.7",//popupWindow框架(引入玩玩而已)
+            "materialDialog"        : "com.afollestad.material-dialogs:core:0.9.6.0",//dialog框架(引入玩玩而已)
+            "agentweb"              : "com.just.agentweb:agentweb:4.0.3-beta",//webView框架
+            "agentwebFileChooser"   : "com.just.agentweb:filechooser:4.0.3-beta",//webView 框架
+            "agentwebDownload"      : "com.just.agentweb:download:4.0.3-beta",//webView 框架
+            "agentwebDownloader"    : "com.github.Justson:Downloader:v4.0.3",//webView 框架
+            "permission"            : "com.yanzhenjie:permission:2.0.3",  //权限框架,仅支持androidx
+//          AppUI   End
+
+//          AppService Start
+            "retrofit2"             : "com.squareup.retrofit2:retrofit:2.5.0",            //网络框架
+            "okhttp3"               : "com.squareup.okhttp3:okhttp:3.12.0",               //网络框架
+            "okhttpUrlConnection"   : "com.squareup.okhttp3:okhttp-urlconnection:3.6.0",  //网络框架
+            "ormlite"               : "com.j256.ormlite:ormlite-android:5.0", //数据库
+            "gson"                  : "com.google.code.gson:gson:2.8.2",  //json数据解析
+//           AppService End
+
+//            AppCommon Start
+            "eventBus"              : "org.greenrobot:eventbus:3.1.1",   //事件总线
+            "logger"                : "com.orhanobut:logger:2.2.0",      //日志框架
+            "freeReflection"        : "me.weishu:free_reflection:2.0.0", //允许反射隐藏方法
+//            AppCommon End
+    ]
+}

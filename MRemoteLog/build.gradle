@@ -1,0 +1,44 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
+                arg("AROUTER_GENERATE_DOC", "enable")
+            }
+        }
+    }
+
+    androidExtensions {//kotlin-android-extensions plugin need
+        experimental = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    /**********************   组件模块 start  ************************/
+    compileOnly project(path: ':AppUI')
+    /**********************    组件模块 end  ************************/
+    /**/
+    /**********************   arouter框架 start  ************************/
+    compileOnly rootProject.ext.dependencies.arouterApi
+    kapt rootProject.ext.dependencies.arouterCompiler
+    /**********************    arouter框架 end  ************************/
+    /**/
+    /**********************   dagger2 start  ************************/
+    compileOnly rootProject.ext.dependencies.daggerAndroid
+    compileOnly rootProject.ext.dependencies.daggerAndroidSupport
+    kapt rootProject.ext.dependencies.daggerCompiler
+    kapt rootProject.ext.dependencies.daggerAndroidProcessor
+    /**********************   dagger2 end  ************************/
+}

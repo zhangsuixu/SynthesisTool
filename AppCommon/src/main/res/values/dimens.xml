@@ -1,0 +1,40 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="default_padding_left_large">20dip</dimen>
+    <dimen name="default_padding_right_large">20dip</dimen>
+    <dimen name="title_bar_height">50dip</dimen>
+    <dimen name="custom_webview_progressbar_height">5dp</dimen>
+    <dimen name="ts_base_layout_title">16sp</dimen>
+    <dimen name="ts_pull_footer">15sp</dimen>
+
+    <dimen name="ts_10">10sp</dimen>
+    <dimen name="ts_12">12sp</dimen>
+    <dimen name="ts_13">13sp</dimen>
+    <dimen name="ts_14">14sp</dimen>
+    <dimen name="ts_15">15sp</dimen>
+    <dimen name="ts_16">16sp</dimen>
+    <dimen name="ts_17">17sp</dimen>
+    <dimen name="ts_18">18sp</dimen>
+    <dimen name="ts_19">19sp</dimen>
+    <dimen name="ts_20">20sp</dimen>
+
+    <!-- pulltorefresh -->
+    <dimen name="indicator_right_padding">10dp</dimen>
+    <dimen name="indicator_corner_radius">12dp</dimen>
+    <dimen name="indicator_internal_padding">4dp</dimen>
+    <dimen name="header_footer_left_right_padding">24dp</dimen>
+    <dimen name="header_footer_top_bottom_padding">12dp</dimen>
+
+    <dimen name="default_layout_screen_gap">15dp</dimen><!--layout与手机屏幕边缘的间距-->
+
+    <!--商汤-->
+    <dimen name="text_size_small">15sp</dimen>
+    <dimen name="text_size">20sp</dimen>
+    <!--商汤-->
+
+    <dimen name="login_view_margia_left">28dp</dimen>
+    <dimen name="view_margia_a">8dp</dimen>
+    <dimen name="view_margia_b">10dp</dimen>
+    <dimen name="view_margia_c">12dp</dimen>
+    <dimen name="view_margia_d">20dp</dimen>
+</resources>

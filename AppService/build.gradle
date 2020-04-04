@@ -1,0 +1,29 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    /**********************    通用组件 start  ************************/
+    api project(path: ':AppCommon')
+    /**********************    通用组件 end  ************************/
+    /**/
+    /**********************     网络库 start  *************************/
+    implementation rootProject.ext.dependencies.retrofit2
+    implementation rootProject.ext.dependencies.okhttp3
+    implementation rootProject.ext.dependencies.okhttpUrlConnection
+//    compile 'com.squareup.retrofit2:converter-gson:2.5.0'
+    /**********************    网络库 end  ****************************/
+    /**/
+    /**********************    数据库 start  ************************/
+    implementation rootProject.ext.dependencies.ormlite
+    /**********************    数据库 end  ************************/
+}

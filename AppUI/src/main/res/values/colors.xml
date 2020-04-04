@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- common start -->
+    <color name="transparent">#00000000</color>
+    <color name="default_window_bg">#f5f5f5</color>
+    <!-- common end -->
+
+    <color name="color_00bbff">#00BBFF</color>
+    <color name="color_121C32">#121C32</color>
+    <color name="color_BCBCBC">#BCBCBC</color>
+</resources>

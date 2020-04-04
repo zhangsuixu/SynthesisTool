@@ -1,0 +1,38 @@
+{
+  "code": "200",
+  "message": "成功",
+  "result": "success",
+  "data": {
+    "mainBottoms": [
+      {
+        "isSelected": true,
+        "name": "首页",
+        "selectedId": 2131165318,
+        "unselectedId": 2131165317
+      },
+      {
+        "isSelected": false,
+        "name": "本地日志",
+        "selectedId": 2131165318,
+        "unselectedId": 2131165317
+      },
+      {
+        "isSelected": false,
+        "name": "远程日志",
+        "selectedId": 2131165318,
+        "unselectedId": 2131165317
+      }
+    ],
+    "mainFragmentParams": [
+      {
+        "fragmentsId": 1
+      },
+      {
+        "fragmentsId": 2
+      },
+      {
+        "fragmentsId": 3
+      }
+    ]
+  }
+}

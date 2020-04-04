@@ -1,0 +1,39 @@
+[{
+  "fileName": "mall_V1.4.8.11_uat.apk",
+  "fileSize": 14047206,
+  "createTime": 1539770348200,
+  "versionName": "1.4.8.11",
+  "appLabel": "生活",
+  "appPkgName": "xxx.xxx.xxx",
+  "appMd5": "b0f46fafd6085af6086980479a188f6d",
+  "versionCode": "10407"
+}, {
+  "fileName": "corder_V3.3.0_uat.apk",
+  "fileSize": 23336742,
+  "createTime": 1540190938958,
+  "versionName": "3.3.0_uat",
+  "appLabel": "宝",
+  "appPkgName": "kkk.kkk.kkk",
+  "appMd5": "e65299f0921aeac8bb2f50eb3dad2a77",
+  "versionCode": "30300"
+}, {
+  "fileName": "mall_V2.0.1_online.apk",
+  "fileSize": 13444481,
+  "createTime": 1540381074983,
+  "versionName": "2.0.1",
+  "appLabel": "生活",
+  "appPkgName": "sss.sss.sss",
+  "appMd5": "6ee906b605cc1452e6664b2314435d8c",
+  "versionCode": "20001",
+  "updateContent": "1.正式版本V2.0.1\n2.会员一期遗留问题修复\n"
+}, {
+  "fileName": "mall_V2.0.2_online.apk",
+  "fileSize": 13450826,
+  "createTime": 1540996736225,
+  "versionName": "2.0.2",
+  "appLabel": "生活",
+  "appPkgName": "ddd.ddd.ddd",
+  "appMd5": "e2f08947b9f828047cd057c3e02c2cfb",
+  "versionCode": "20002",
+  "updateContent": "1.正式版本V2.0.2\n2.新增会员三期功能\n3.功能优化调整\n"
+}]

@@ -1,0 +1,101 @@
+<resources>
+
+    <style name="LoaddingiDalog" parent="android:style/Theme.Dialog">
+        <!--背景颜色及和透明程度-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--是否去除标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!--是否去除边框-->
+        <item name="android:windowFrame">@null</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否模糊-->
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="Progress_circle_orange_style"> <!--加载框-->
+        <item name="android:indeterminateDrawable">@drawable/progressbar_circle_orange</item>
+        <item name="android:minWidth">25dp</item>
+        <item name="android:minHeight">25dp</item>
+        <item name="android:maxWidth">38dp</item>
+        <item name="android:maxHeight">38dp</item>
+    </style>
+
+    <!--自定义Dialog样式-->
+    <style name="customerDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="ProgressHUD" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="ProgressLoading" parent="ProgressHUD">
+        <item name="android:backgroundDimEnabled">false</item><!--模糊-->
+    </style>
+
+    <declare-styleable name="ClearEditText">
+        <attr name="textHint" format="string" />
+        <attr name="deleteVisible" format="boolean" />
+        <attr name="textColor" format="color" />
+        <attr name="hintColor" format="color" />
+        <attr name="textContent" format="string" />
+        <attr name="textSize" format="dimension" />
+        <attr name="deleteSrc" format="reference" />
+        <attr name="textMaxLength" format="integer" />
+        <attr name="seePassword" format="boolean" />
+        <attr name="textInputType" format="enum">
+            <enum name="text" value="0" />
+            <enum name="number" value="1" />
+            <enum name="password" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="PswInputView">
+        <attr name="count" format="integer" />
+        <attr name="border_color" format="color" />
+        <attr name="dot_color" format="color" />
+        <attr name="text_visible" format="boolean" />
+        <attr name="text_size" format="dimension" />
+        <attr name="divider_size" format="dimension" />
+        <attr name="pwd_style">
+            <flag name="rectangle" value="0x0" />
+            <flag name="line" value="0x1" />
+        </attr>
+    </declare-styleable>
+
+    <!-- 自定义验证码输入框-->
+    <declare-styleable name="VerificationCodeView">
+        <!--输入框的数量-->
+        <attr name="icv_et_number" format="integer" />
+        <!--输入框的宽度-->
+        <attr name="icv_et_width" format="dimension|reference" />
+        <!--输入框之间的分割线-->
+        <attr name="icv_et_divider_drawable" format="reference" />
+        <!--输入框文字颜色-->
+        <attr name="icv_et_text_color" format="color|reference" />
+        <!--输入框文字大小-->
+        <attr name="icv_et_text_size" format="dimension|reference" />
+        <!--输入框获取焦点时边框-->
+        <attr name="icv_et_bg_focus" format="reference" />
+        <!--输入框没有焦点时边框-->
+        <attr name="icv_et_bg_normal" format="reference" />
+        <!--是否是密码模式-->
+        <attr name="icv_et_pwd" format="boolean" />
+        <!--密码模式时,圆的半径-->
+        <attr name="icv_et_pwd_radius" format="dimension|reference" />
+    </declare-styleable>
+</resources>

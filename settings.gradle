@@ -1,0 +1,7 @@
+include ':App'
+include ':MLocalLog'
+include ':MRemoteLog'
+include ':MHome'
+include ':AppUI'
+include ':AppService'
+include ':AppCommon'
