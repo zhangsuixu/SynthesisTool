@@ -49,7 +49,7 @@ class MainActivity : BaseActivity(), MainDraggerView {
     }
 
     override fun initData() {
-        showLoadingView()
+//        showLoadingView()
 
         mMainDraggerPreseneter?.loadData()
     }
@@ -63,8 +63,7 @@ class MainActivity : BaseActivity(), MainDraggerView {
     }
 
     override fun refreshView(response: MainPageParam) {
-
-        hideLoadingView()
+//        hideLoadingView()
 
         val mainFragmentParams = response.mainFragmentParams
 
